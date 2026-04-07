@@ -69,6 +69,8 @@ build_release_win32.bat
 - 两个脚本固定使用 `D:\Program Files (x86)\Microsoft Visual Studio\2019\Community` 下的 VS2019/MSBuild。
 - `build_debug_win32.bat` 构建 `Debug|Win32`。
 - `build_release_win32.bat` 构建 `Release|Win32`。
+- 可以直接双击运行，脚本结束后会暂停，方便查看结果。
+- 也可以在 `cmd` 中运行，便于持续查看完整构建输出。
 - 构建失败时脚本会返回非 `0` 退出码。
 
 ### 构建依赖
