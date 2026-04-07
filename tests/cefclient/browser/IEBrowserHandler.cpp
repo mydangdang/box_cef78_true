@@ -10,7 +10,6 @@
 #include "tests/cefclient/browser/root_window_win.h"
 #include "tests/cefclient/WinMsg.h"
 
-#include "IEKernel/src/utils/string_util.h"
 #include "tests/cefclient/MemoryDeal.h"
 //#include "../Injecter.h"
 

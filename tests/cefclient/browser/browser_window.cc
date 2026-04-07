@@ -98,7 +98,15 @@ void BrowserWindow::OnBrowserCreated(CefRefPtr<CefBrowser> browser) {
 
 void BrowserWindow::OnBrowserClosing(CefRefPtr<CefBrowser> browser) {
   REQUIRE_MAIN_THREAD();
-  DCHECK_EQ(browser->GetIdentifier(), browser_->GetIdentifier());
+
+  if (!browser_.get() || browser->GetIdentifier() != browser_->GetIdentifier()) {
+    char szOut[256] = {0};
+    sprintf_s(szOut, 256,
+              "BrowserWindow::OnBrowserClosing mismatch: incoming=%d current=%d\n",
+              browser ? browser->GetIdentifier() : 0,
+              browser_.get() ? browser_->GetIdentifier() : 0);
+    OutputDebugStringA(szOut);
+  }
 
   MemoryDealer.DelFreeOBJ(int(this));
 
@@ -108,13 +116,22 @@ void BrowserWindow::OnBrowserClosing(CefRefPtr<CefBrowser> browser) {
 
 void BrowserWindow::OnBrowserClosed(CefRefPtr<CefBrowser> browser) {
   REQUIRE_MAIN_THREAD();
-  if (browser_.get()) {
-    DCHECK_EQ(browser->GetIdentifier(), browser_->GetIdentifier());
-    browser_ = NULL;
+  if (!browser_.get() || browser->GetIdentifier() != browser_->GetIdentifier()) {
+    char szOut[256] = {0};
+    sprintf_s(szOut, 256,
+              "BrowserWindow::OnBrowserClosed mismatch: incoming=%d current=%d\n",
+              browser ? browser->GetIdentifier() : 0,
+              browser_.get() ? browser_->GetIdentifier() : 0);
+    OutputDebugStringA(szOut);
   }
 
-  client_handler_->DetachDelegate();
-  client_handler_ = NULL;
+  if (browser_.get())
+    browser_ = NULL;
+
+  if (client_handler_.get()) {
+    client_handler_->DetachDelegate();
+    client_handler_ = NULL;
+  }
 
   // |this| may be deleted.
   delegate_->OnBrowserWindowDestroyed(browser->GetIdentifier());

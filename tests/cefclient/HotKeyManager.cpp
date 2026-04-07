@@ -18,9 +18,7 @@ HotKeyManager::HotKeyManager()
 HotKeyManager::~HotKeyManager()
 {
 	m_bQuit = true;
-	PostThreadMessage(GetThreadId(m_tHotKeyMonitor.native_handle()), WM_QUIT, 0, 0);
-
-	if (WaitForSingleObject(m_tHotKeyMonitor.native_handle(), 100) == WAIT_TIMEOUT)
+	if (m_tHotKeyMonitor.joinable())
 	{
 		PostThreadMessage(GetThreadId(m_tHotKeyMonitor.native_handle()), WM_QUIT, 0, 0);
 		m_tHotKeyMonitor.join();
@@ -58,7 +56,7 @@ void HotKeyManager::MonitHotKey()
 	{
 		if (msg.message == WM_HOTKEY)
 		{
-			//ÕâÀïËäÈ»ÔÚÏß³ÌÖĞ, µ«ÊÇÓĞÏÈºó¹ØÏµ,ÉèÖÃÍêÔÙ³ö·¢,ËùÒÔ²»¼ÓËøÁË.
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Èºï¿½ï¿½Ïµ,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù³ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 			if (m_pObserver)
 			{
 				for each (auto pHotKey in m_vHotKeys)

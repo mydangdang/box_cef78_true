@@ -20,7 +20,7 @@ class WMIC_ERROR : public std::exception
 public:
     WMIC_ERROR(const char * message);
     WMIC_ERROR(const std::string message);
-    virtual char const * what() const;
+    virtual char const * what() const noexcept override;
 private:
     std::string m_message;
 };

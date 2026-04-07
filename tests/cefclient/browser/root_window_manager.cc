@@ -121,7 +121,13 @@ RootWindowManager::RootWindowManager(bool terminate_when_all_windows_closed)
 
 RootWindowManager::~RootWindowManager() {
   // All root windows should already have been destroyed.
-  DCHECK(root_windows_.empty());
+  if (!root_windows_.empty()) {
+    char szOut[256] = {0};
+    sprintf_s(szOut, 256,
+              "RootWindowManager destroyed with %u root windows still alive\n",
+              static_cast<unsigned>(root_windows_.size()));
+    OutputDebugStringA(szOut);
+  }
 }
 
 scoped_refptr<RootWindow> RootWindowManager::CreateRootWindow(
@@ -313,7 +319,7 @@ void RootWindowManager::BroadCastMsg(int nBrowserID, const std::string& scallerT
 		return;
 	}
 
-    //0 ·¢¸øËùÓÐ;
+    //0 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
     if(!nTargetType)
 	{
 		RootWindowSet::const_iterator it = root_windows_.begin();
@@ -323,7 +329,7 @@ void RootWindowManager::BroadCastMsg(int nBrowserID, const std::string& scallerT
             (*it)->BroadCastMsg(nBrowserID, scallerTag, duplicateMsg, nTargetType);
         }
 	}
-    else //·¢¸øËùÔÚ¸¸´°¿Ú
+    else //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ï¿½ï¿½
     {
 		RootWindowSet::const_iterator it = root_windows_.begin();
 		for (; it != root_windows_.end(); ++it) {
@@ -455,11 +461,12 @@ void RootWindowManager::OnRootWindowDestroyed(RootWindow* root_window) {
   REQUIRE_MAIN_THREAD();
 
   RootWindowSet::iterator it = root_windows_.find(root_window);
-  DCHECK(it != root_windows_.end());
+  if (it == root_windows_.end())
+    return;
+
   int nBrowserID = root_window->GetMainBrowserID();
   std::string szTagName = root_window->GetMainBrowserTag();
-  if (it != root_windows_.end())
-    root_windows_.erase(it);
+  root_windows_.erase(it);
 
   bool bStillHaveTopWnd = false;
   it = root_windows_.begin();

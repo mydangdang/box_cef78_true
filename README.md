@@ -36,16 +36,17 @@
 
 根据当前工程配置，建议使用以下环境：
 
-- Visual Studio 2022 打开解决方案
-- C++ `v140` 工具集
-- Windows SDK 8.1
+- Visual Studio 2019 打开解决方案
+- C++ `v142` 工具集
+- Windows SDK `10.0.19041.0`（或安装的兼容 10.0 SDK）
 - 目标平台：`Win32`
 
 说明：
 
-- `WebFrame.sln` 是 VS2022 格式，但工程文件使用的是旧工具集 `v140`。
+- `WebFrame.sln` 已调整为 VS2019 格式，工程文件使用 `v142` 工具集。
 - 解决方案里虽然能看到 `x64` 配置名，但当前工程实际仍映射到 `Win32`。
 - 输出文件名不是 `cefclient.exe`，而是 `box.exe`。
+- 原工程对 ATL Server 的 `atlrx.h` 有依赖；仓库现已在 `tests/cefclient/atlrx.h` 提供最小兼容实现，避免 VS2019 环境缺失该头文件。
 
 ## 构建与运行
 

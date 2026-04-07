@@ -1,6 +1,6 @@
 #include "TopFullWnd.h"
 #include <process.h>
-#include "IEKernel/src/utils/string_util.h"
+#include "tests/cefclient/string_util.h"
 
 const wchar_t* g_TopFullBrowserWnd = L"TopFullBrowserWnd";
 
@@ -25,12 +25,12 @@ void TopFullWnd::SetWndFullTop(client::BrowserWindowStdWin *pBrowserWnd,HWND hOl
 	int nHeight = GetSystemMetrics(SM_CYSCREEN);
 	if (!m_hTopFullWnd) 
 	{
-		std::wstring szTitle = L"ÓÎÏ·ºÐ×Ó";
+		std::wstring szTitle = L"ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½";
 		szTitle = UtilString::SU2W(pBrowserWnd->GetCurTitle());
 		m_hTopFullWnd = CreateWindowEx(NULL, g_TopFullBrowserWnd, szTitle.c_str(),
 			WS_POPUP,0, 0, nWidth, nHeight, NULL, NULL, m_hInstance, this);
 
-		std::wstring szTipTxt = L"°´F11ÍË³öÈ«ÆÁ";
+		std::wstring szTipTxt = L"ï¿½ï¿½F11ï¿½Ë³ï¿½È«ï¿½ï¿½";
 		RECT rcPos = { 0 };
 		int nTxtWidth = m_TipWnd.GetTextWidth(szTipTxt.c_str());
 		nTxtWidth += 30;

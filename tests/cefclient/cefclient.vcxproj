@@ -16,18 +16,18 @@
     <Platform>Win32</Platform>
     <ProjectName>cefclient</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -406,6 +406,7 @@ xcopy $(SolutionDir)cefdepends\addtions\*.* $(SolutionDir)\bin\$(Configuration) 
     <ClInclude Include="$(SolutionDir)tests\cefclient\browser\views_style.h" />
     <ClCompile Include="$(SolutionDir)tests\cefclient\browser\views_window.cc" />
     <ClInclude Include="$(SolutionDir)tests\cefclient\browser\views_window.h" />
+    <None Include="..\..\libcef_dll_wrapper\libcef_dll_wrapper.vcxproj" />
     <ResourceCompile Include="$(SolutionDir)tests\cefclient\resources\win\cefclient.rc" />
     <ClCompile Include="$(SolutionDir)tests\shared\browser\main_message_loop_external_pump_win.cc" />
     <ClCompile Include="$(SolutionDir)tests\shared\browser\resource_util_win.cc" />

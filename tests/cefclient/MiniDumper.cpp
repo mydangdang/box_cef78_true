@@ -6,7 +6,7 @@
 #include <dbghelp.h>
 #include "miniDumper.h"
 #include "../shared/browser/util_win.h"
-#include "IEKernel/src/utils/string_util.h"
+#include "string_util.h"
 
 #ifdef UNICODE
     #define _tcssprintf wsprintf

@@ -11,9 +11,9 @@ WMIC_ERROR::WMIC_ERROR(const std::string message):WMIC_ERROR(message.data())
 
 }
 
-const char *WMIC_ERROR::what() const
+const char *WMIC_ERROR::what() const noexcept
 {
-    return m_message.data();
+    return m_message.c_str();
 }
 //WMIC_ERROR end
 

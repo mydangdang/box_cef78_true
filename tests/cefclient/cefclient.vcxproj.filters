@@ -239,6 +239,7 @@
     <None Include="$(SolutionDir)tests\shared\resources\osr_test.html" />
     <None Include="$(SolutionDir)tests\shared\resources\pdf.html" />
     <None Include="$(SolutionDir)tests\shared\resources\pdf.pdf" />
+    <None Include="..\..\libcef_dll_wrapper\libcef_dll_wrapper.vcxproj" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(SolutionDir)tests\cefclient\resources\win\cefclient.rc" />

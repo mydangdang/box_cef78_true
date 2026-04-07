@@ -244,6 +244,7 @@ class RootWindowWin : public RootWindow,public ToastWnd::Delegate, public Browse
 
   bool window_destroyed_;
   bool browser_destroyed_;
+  bool destroyed_notified_;
 
   bool bIsBossIn;
   bool called_enable_non_client_dpi_scaling_;

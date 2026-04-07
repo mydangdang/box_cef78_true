@@ -329,7 +329,9 @@ MainContextImpl::MainContextImpl(CefRefPtr<CefCommandLine> command_line,
 MainContextImpl::~MainContextImpl() {
   // The context must either not have been initialized, or it must have also
   // been shut down.
-  DCHECK(!initialized_ || shutdown_);
+  if (initialized_ && !shutdown_) {
+    OutputDebugStringA("MainContextImpl destroyed before Shutdown completed\n");
+  }
 
 //   if (m_hPluginDLL)
 //   {

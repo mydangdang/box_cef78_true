@@ -1,7 +1,7 @@
 #include "string_util.h"
 #include <windows.h>
 #include <memory>
-#include <xfunctional>
+#include <functional>
 #include <tchar.h>
 #include <vector>
 #include <sstream>
