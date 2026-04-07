@@ -1,0 +1,13 @@
+.vs/
+.claude/
+*.user
+*.suo
+*.VC.db
+*.VC.opendb
+bin/
+tmp/
+pdb/
+Debug/
+Release/
+cef_binary_78.0.0-master.2072+gb51a4de+chromium-78.0.3904.0_windows32.zip
+cef_binary_78.4.0+gd9fa923+chromium-78.0.3904.108_windows32.zip

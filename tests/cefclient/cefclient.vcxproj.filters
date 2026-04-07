@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\binding_test.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\browser_window.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\bytes_write_handler.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\client_app_delegates_browser.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\client_browser.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\client_handler.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\client_handler_osr.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\client_handler_std.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\dialog_test.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\drm_test.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\image_cache.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\main_context.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\main_context_impl.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_renderer.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\preferences_test.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\response_filter_test.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\root_window.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\root_window_create.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\root_window_manager.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\scheme_test.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\server_test.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\test_runner.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\urlrequest_test.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\client_app_browser.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\extension_util.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\file_util.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\geometry_util.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\main_message_loop.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\main_message_loop_external_pump.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\main_message_loop_std.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\common\client_app_delegates_common.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\common\scheme_test_common.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\common\client_app.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\common\client_app_other.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\common\client_switches.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\renderer\client_app_delegates_renderer.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\renderer\client_renderer.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\renderer\performance_test.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\renderer\performance_test_tests.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\renderer\client_app_renderer.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\cefclient_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\browser_window_osr_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\browser_window_std_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\main_context_impl_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\main_message_loop_multithreaded_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_accessibility_helper.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_accessibility_node.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_accessibility_node_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_d3d11_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_dragdrop_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_ime_handler_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_render_handler_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_render_handler_win_d3d11.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_render_handler_win_gl.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_window_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\resource_util_win_idmap.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\root_window_views.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\root_window_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\temp_window_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\views_menu_bar.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\views_style.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\views_window.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\main_message_loop_external_pump_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\resource_util_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\util_win.cc" />
+    <ClCompile Include="logic\WndOpt.cpp" />
+    <ClCompile Include="logic\WebOpt.cpp" />
+    <ClCompile Include="RTCTX.cpp" />
+    <ClCompile Include="string_util.cpp" />
+    <ClCompile Include="browser\IEBrowserHandler.cpp" />
+    <ClCompile Include="browser\AudioManager.cpp" />
+    <ClCompile Include="browser\TopFullWnd.cpp" />
+    <ClCompile Include="IniParse.cpp" />
+    <ClCompile Include="MD5.cpp" />
+    <ClCompile Include="browser\LayeredWindow.cpp" />
+    <ClCompile Include="browser\ToastWnd.cpp" />
+    <ClCompile Include="ShutDownPlan.cpp" />
+    <ClCompile Include="browser\TipWnd.cpp" />
+    <ClCompile Include="browser\TopFullToolWnd.cpp" />
+    <ClCompile Include="AES.cpp" />
+    <ClCompile Include="Base64.cpp" />
+    <ClCompile Include="SysTask.cpp" />
+    <ClCompile Include="Alarms.cpp" />
+    <ClCompile Include="MiniDumper.cpp" />
+    <ClCompile Include="WinMsg.cpp" />
+    <ClCompile Include="FileAttribute.cpp" />
+    <ClCompile Include="InitialWnd.cpp" />
+    <ClCompile Include="UtilLocalStorage.cpp" />
+    <ClCompile Include="WinHttpClient.cpp" />
+    <ClCompile Include="RegExp.cpp" />
+    <ClCompile Include="StringProcess.cpp" />
+    <ClCompile Include="HotKeyManager.cpp" />
+    <ClCompile Include="browser\CBaseTrayIcon.cpp" />
+    <ClCompile Include="MemoryDeal.cpp" />
+    <ClCompile Include="ipc\PipeClient.cpp" />
+    <ClCompile Include="ipc\PipeServer.cpp" />
+    <ClCompile Include="ipc\Random.cpp" />
+    <ClCompile Include="wmic.cpp" />
+    <ClCompile Include="ScreenRecorder.cpp" />
+    <ClCompile Include="browser\RecordBoundWnd.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\binding_test.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\browser_window.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\bytes_write_handler.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\client_browser.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\client_handler.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\client_handler_osr.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\client_handler_std.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\client_types.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\dialog_test.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\drm_test.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\image_cache.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\main_context.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\main_context_impl.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_dragdrop_events.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_renderer.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_renderer_settings.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\preferences_test.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\resource.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\response_filter_test.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\root_window.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\root_window_manager.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\scheme_test.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\server_test.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\temp_window.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\test_runner.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\urlrequest_test.h" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\client_app_browser.h" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\extension_util.h" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\file_util.h" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\geometry_util.h" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\main_message_loop.h" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\main_message_loop_external_pump.h" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\main_message_loop_std.h" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\resource_util.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\common\scheme_test_common.h" />
+    <ClInclude Include="$(SolutionDir)tests\shared\common\client_app.h" />
+    <ClInclude Include="$(SolutionDir)tests\shared\common\client_app_other.h" />
+    <ClInclude Include="$(SolutionDir)tests\shared\common\client_switches.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\renderer\client_renderer.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\renderer\performance_test.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\renderer\performance_test_setup.h" />
+    <ClInclude Include="$(SolutionDir)tests\shared\renderer\client_app_renderer.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\browser_window_osr_win.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\browser_window_std_win.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\main_message_loop_multithreaded_win.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_accessibility_helper.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_accessibility_node.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_d3d11_win.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_dragdrop_win.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_ime_handler_win.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_render_handler_win.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_render_handler_win_d3d11.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_render_handler_win_gl.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_window_win.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\root_window_views.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\root_window_win.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\temp_window_win.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\views_menu_bar.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\views_style.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\views_window.h" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\util_win.h" />
+    <ClInclude Include="logic\WndOpt.h" />
+    <ClInclude Include="logic\WebOpt.h" />
+    <ClInclude Include="RTCTX.h" />
+    <ClInclude Include="string_util.h" />
+    <ClInclude Include="browser\IEBrowserHandler.h" />
+    <ClInclude Include="browser\AudioManager.h" />
+    <ClInclude Include="browser\TopFullWnd.h" />
+    <ClInclude Include="resources\win\resource.h" />
+    <ClInclude Include="IniParse.h" />
+    <ClInclude Include="MD5.h" />
+    <ClInclude Include="browser\LayeredWindow.h" />
+    <ClInclude Include="browser\ToastWnd.h" />
+    <ClInclude Include="ShutDownPlan.h" />
+    <ClInclude Include="browser\TipWnd.h" />
+    <ClInclude Include="browser\TopFullToolWnd.h" />
+    <ClInclude Include="AES.h" />
+    <ClInclude Include="Base64.h" />
+    <ClInclude Include="SysTask.h" />
+    <ClInclude Include="Alarms.h" />
+    <ClInclude Include="MiniDumper.h" />
+    <ClInclude Include="WinMsg.h" />
+    <ClInclude Include="FileAttribute.h" />
+    <ClInclude Include="InitialWnd.h" />
+    <ClInclude Include="UtilLocalStorage.h" />
+    <ClInclude Include="WinHttpClient.h" />
+    <ClInclude Include="RegExp.h" />
+    <ClInclude Include="StringProcess.h" />
+    <ClInclude Include="HotKeyManager.h" />
+    <ClInclude Include="browser\CBaseTrayIcon.h" />
+    <ClInclude Include="MemoryDeal.h" />
+    <ClInclude Include="ipc\DoubleBufferQueue.h" />
+    <ClInclude Include="ipc\PipeClient.h" />
+    <ClInclude Include="ipc\PipeServer.h" />
+    <ClInclude Include="ipc\Random.h" />
+    <ClInclude Include="wmic.h" />
+    <ClInclude Include="ScreenRecorder.h" />
+    <ClInclude Include="browser\RecordBoundWnd.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="$(SolutionDir)tests\cefclient\resources\logo.png" />
+    <Image Include="$(SolutionDir)tests\cefclient\resources\menu_icon.1x.png" />
+    <Image Include="$(SolutionDir)tests\cefclient\resources\menu_icon.2x.png" />
+    <Image Include="$(SolutionDir)tests\cefclient\resources\extensions\set_page_color\icon.png" />
+    <Image Include="$(SolutionDir)tests\shared\resources\window_icon.1x.png" />
+    <Image Include="$(SolutionDir)tests\shared\resources\window_icon.2x.png" />
+    <Image Include="resources\win\cefclient.ico" />
+    <Image Include="resources\win\small.ico" />
+    <Image Include="logo.ico" />
+    <Image Include="resources\win\logo.ico" />
+    <Image Include="resources\win\bk.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(SolutionDir)tests\cefclient\resources\binding.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\dialogs.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\draggable.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\drm.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\localstorage.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\other_tests.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\performance.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\performance2.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\preferences.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\response_filter.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\server.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\transparency.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\urlrequest.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\websocket.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\window.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\xmlhttprequest.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\extensions\set_page_color\README.md" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\extensions\set_page_color\manifest.json" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\extensions\set_page_color\popup.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\extensions\set_page_color\popup.js" />
+    <None Include="$(SolutionDir)tests\shared\resources\osr_test.html" />
+    <None Include="$(SolutionDir)tests\shared\resources\pdf.html" />
+    <None Include="$(SolutionDir)tests\shared\resources\pdf.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="$(SolutionDir)tests\cefclient\resources\win\cefclient.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="cefclient">
+      <UniqueIdentifier>{7C072F54-770B-3FE2-B57C-F0D5F8266BD4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cefclient\browser">
+      <UniqueIdentifier>{736E2102-7073-3693-A680-7C5F8A5B8E2F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cefclient\common">
+      <UniqueIdentifier>{0D0F0EA9-4A28-3BA5-A668-D7E4EC0FBE96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cefclient\renderer">
+      <UniqueIdentifier>{48BBCE65-B417-32D9-A5F9-2F1C242E14D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cefclient\resources">
+      <UniqueIdentifier>{C30A41FA-53DE-3955-BF1D-4709729A9146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cefclient\resources\extensions">
+      <UniqueIdentifier>{BF800043-ECD0-3F54-97A6-8EA3748D5267}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cefclient\resources\extensions\set_page_color">
+      <UniqueIdentifier>{F8166396-4ED6-3795-B31C-4526E573D583}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cefclient\resources\win">
+      <UniqueIdentifier>{A17F5437-F234-3A40-9E0E-A4CBF4387CBD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared">
+      <UniqueIdentifier>{1F508ACF-13E8-30D0-9AB2-60C026E89F7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\browser">
+      <UniqueIdentifier>{B5EAE0AB-C92D-3A0C-8204-A749DEEEA73E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\common">
+      <UniqueIdentifier>{1B3739ED-1680-3229-BA21-3FF5315C9AD7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\renderer">
+      <UniqueIdentifier>{5EB2E812-850A-3623-A23B-150C0AC80B92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\resources">
+      <UniqueIdentifier>{097B9388-A3E1-3D20-9731-E2BECB400BE5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

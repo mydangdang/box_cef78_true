@@ -1,0 +1,75 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script language="javascript">
+
+        function onCallNativeSucc(responseJsonstr){
+            alert( responseJsonstr);
+        }
+
+        function onCallNativeFail(code,msg){
+            alert(code + " - " + msg);
+        }
+
+
+        function callNative (reqInfo,cbSucc,cbFail,bOnce) {
+            reqJson = JSON.stringify(reqInfo);
+
+            return window.external.nativeCall({
+                request:reqJson,
+                persistent:!bOnce,
+                onSuccess:cbSucc,
+                onFailure:cbFail
+                });
+        }
+    
+        function registObserver()
+        {
+           var reqInfo = {
+                "funcName" : "browser_registObserver",
+				"hookopen":true
+            };
+            callNative(reqInfo,onCallNativeSucc,onCallNativeFail,false)
+        }
+       
+        function CheckIEVer() 
+        {
+            alert(navigator.userAgent);
+        }
+
+        function broadCastMsg(msgJson) {
+             var reqInfo = {
+                 "funcName" : "browser_broadcast",
+                 "msg" : msgJson,
+                 "target":1
+                 };
+            callNative(reqInfo,onCallNativeSucc,onCallNativeFail,false);
+        }
+
+        function testBroadCast() {
+            var msgJson = {
+                "msgName" : "test蜂窝蜂窝",
+                "msgParam" : {
+                    "arg1":"test1的方式蜂窝蜂窝",
+                    "arg2":2
+                }
+            };
+            broadCastMsg(msgJson)
+        }
+		
+		function testWinOpen() {
+          
+            window.open('https://www.baidu.com')
+        }
+     
+    </script>
+</head>
+<body onload="registObserver()">
+    <div style="height:50px"></div> 
+
+    <button type="button" onclick="CheckIEVer()">检测IE版本</button>
+    <button type="button" onclick="testBroadCast()">发送广播</button>
+	<button type="button" onclick="testWinOpen()">打开URL</button>
+</body>
+</html>

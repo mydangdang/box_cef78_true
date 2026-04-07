@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F5FAAA9D-5255-3CA9-8259-23941703DDE4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>cefclient</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)tmp\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">box</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)tmp\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">box</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>$(SolutionDir)lib\$(Configuration)\;$(SolutionDir)cefdepends\$(Configuration)\lib\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)AtlServer\include;$(SolutionDir)cefdepends\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>$(SolutionDir)lib\$(Configuration)\;$(SolutionDir)cefdepends\$(Configuration)\lib\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)AtlServer\include;$(SolutionDir)cefdepends\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4127;4244;4481;4512;4701;4702;4996;4800</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;__STDC_CONSTANT_MACROS;__STDC_FORMAT_MACROS;_WIN32;UNICODE;_UNICODE;WINVER=0x0601;_WIN32_WINNT=0x601;_HAS_EXCEPTIONS=0;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;__STDC_CONSTANT_MACROS;__STDC_FORMAT_MACROS;_WIN32;UNICODE;_UNICODE;WINVER=0x0601;_WIN32_WINNT=0x601;NOMINMAX;WIN32_LEAN_AND_MEAN;_HAS_EXCEPTIONS=0;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>mt.exe -nologo -manifest "$(SolutionDir)tests/cefclient/resources/win/cefclient.exe.manifest" "$(SolutionDir)tests/cefclient/resources/win/compatibility.manifest" -outputresource:"$(SolutionDir)bin\$(Configuration)\box.exe";#1
+xcopy $(SolutionDir)cefdepends\$(Configuration)\bin\*.* $(SolutionDir)\bin\$(Configuration) /E /S /Y /D
+xcopy $(SolutionDir)cefdepends\Resources\*.* $(SolutionDir)\bin\$(Configuration) /E /S /Y /D
+xcopy $(SolutionDir)cefdepends\addtions\*.* $(SolutionDir)\bin\$(Configuration) /E /S /Y /D</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>libcef_dll_wrapper.lib;comctl32.lib;rpcrt4.lib;shlwapi.lib;ws2_32.lib;d3d11.lib;glu32.lib;imm32.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;libMinHook.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(SolutionDir)tests/cefclient/Debug/cefclient.lib</ImportLibrary>
+      <LargeAddressAware>true</LargeAddressAware>
+      <ProgramDataBaseFile>$(SolutionDir)pdb\$(Configuration)\$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4127;4244;4481;4512;4701;4702;4996;4800</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;__STDC_CONSTANT_MACROS;__STDC_FORMAT_MACROS;_WIN32;UNICODE;_UNICODE;WINVER=0x0601;_WIN32_WINNT=0x601;_HAS_EXCEPTIONS=0;_NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;__STDC_CONSTANT_MACROS;__STDC_FORMAT_MACROS;_WIN32;UNICODE;_UNICODE;WINVER=0x0601;_WIN32_WINNT=0x601;NOMINMAX;WIN32_LEAN_AND_MEAN;_HAS_EXCEPTIONS=0;_NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>mt.exe -nologo -manifest "$(SolutionDir)tests/cefclient/resources/win/cefclient.exe.manifest" "$(SolutionDir)tests/cefclient/resources/win/compatibility.manifest" -outputresource:"$(SolutionDir)bin\$(Configuration)\box.exe";#1
+xcopy $(SolutionDir)cefdepends\$(Configuration)\bin\*.* $(SolutionDir)\bin\$(Configuration) /E /S /Y /D
+xcopy $(SolutionDir)cefdepends\Resources\*.* $(SolutionDir)\bin\$(Configuration) /E /S /Y /D
+xcopy $(SolutionDir)cefdepends\addtions\*.* $(SolutionDir)\bin\$(Configuration) /E /S /Y /D</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>libcef.lib;libcef_dll_wrapper.lib;comctl32.lib;rpcrt4.lib;shlwapi.lib;ws2_32.lib;d3d11.lib;glu32.lib;imm32.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;libMinHook.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(SolutionDir)tests/cefclient/Release/cefclient.lib</ImportLibrary>
+      <LargeAddressAware>true</LargeAddressAware>
+      <ProgramDataBaseFile>$(SolutionDir)pdb\$(Configuration)\$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\binding_test.cc" />
+    <ClCompile Include="AES.cpp" />
+    <ClCompile Include="Alarms.cpp" />
+    <ClCompile Include="Base64.cpp" />
+    <ClCompile Include="browser\AudioManager.cpp" />
+    <ClCompile Include="browser\CBaseTrayIcon.cpp" />
+    <ClCompile Include="browser\IEBrowserHandler.cpp" />
+    <ClCompile Include="browser\LayeredWindow.cpp" />
+    <ClCompile Include="browser\RecordBoundWnd.cpp" />
+    <ClCompile Include="browser\TipWnd.cpp" />
+    <ClCompile Include="browser\ToastWnd.cpp" />
+    <ClCompile Include="browser\TopFullToolWnd.cpp" />
+    <ClCompile Include="FileAttribute.cpp" />
+    <ClCompile Include="HotKeyManager.cpp" />
+    <ClCompile Include="IniParse.cpp" />
+    <ClCompile Include="InitialWnd.cpp" />
+    <ClCompile Include="ipc\PipeClient.cpp" />
+    <ClCompile Include="ipc\PipeServer.cpp" />
+    <ClCompile Include="ipc\Random.cpp" />
+    <ClCompile Include="logic\WebOpt.cpp" />
+    <ClCompile Include="logic\WndOpt.cpp" />
+    <ClCompile Include="MD5.cpp" />
+    <ClCompile Include="MemoryDeal.cpp" />
+    <ClCompile Include="MiniDumper.cpp" />
+    <ClCompile Include="RegExp.cpp" />
+    <ClCompile Include="RTCTX.cpp" />
+    <ClCompile Include="ScreenRecorder.cpp" />
+    <ClCompile Include="ShutDownPlan.cpp" />
+    <ClCompile Include="StringProcess.cpp" />
+    <ClCompile Include="string_util.cpp" />
+    <ClCompile Include="browser\TopFullWnd.cpp" />
+    <ClCompile Include="SysTask.cpp" />
+    <ClCompile Include="UtilLocalStorage.cpp" />
+    <ClCompile Include="WinHttpClient.cpp" />
+    <ClCompile Include="WinMsg.cpp" />
+    <ClCompile Include="wmic.cpp" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\binding_test.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\browser_window.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\browser_window.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\bytes_write_handler.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\bytes_write_handler.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\client_app_delegates_browser.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\client_browser.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\client_browser.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\client_handler.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\client_handler.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\client_handler_osr.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\client_handler_osr.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\client_handler_std.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\client_handler_std.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\client_types.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\dialog_test.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\dialog_test.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\drm_test.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\drm_test.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\image_cache.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\image_cache.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\main_context.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\main_context.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\main_context_impl.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\main_context_impl.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_dragdrop_events.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_renderer.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_renderer.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_renderer_settings.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\preferences_test.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\preferences_test.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\resource.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\response_filter_test.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\response_filter_test.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\root_window.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\root_window.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\root_window_create.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\root_window_manager.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\root_window_manager.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\scheme_test.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\scheme_test.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\server_test.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\server_test.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\temp_window.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\test_runner.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\test_runner.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\urlrequest_test.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\urlrequest_test.h" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\client_app_browser.cc" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\client_app_browser.h" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\extension_util.cc" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\extension_util.h" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\file_util.cc" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\file_util.h" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\geometry_util.cc" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\geometry_util.h" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\main_message_loop.cc" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\main_message_loop.h" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\main_message_loop_external_pump.cc" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\main_message_loop_external_pump.h" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\main_message_loop_std.cc" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\main_message_loop_std.h" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\resource_util.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\common\client_app_delegates_common.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\common\scheme_test_common.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\common\scheme_test_common.h" />
+    <ClCompile Include="$(SolutionDir)tests\shared\common\client_app.cc" />
+    <ClInclude Include="$(SolutionDir)tests\shared\common\client_app.h" />
+    <ClCompile Include="$(SolutionDir)tests\shared\common\client_app_other.cc" />
+    <ClInclude Include="$(SolutionDir)tests\shared\common\client_app_other.h" />
+    <ClCompile Include="$(SolutionDir)tests\shared\common\client_switches.cc" />
+    <ClInclude Include="$(SolutionDir)tests\shared\common\client_switches.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\renderer\client_app_delegates_renderer.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\renderer\client_renderer.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\renderer\client_renderer.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\renderer\performance_test.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\renderer\performance_test.h" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\renderer\performance_test_setup.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\renderer\performance_test_tests.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\renderer\client_app_renderer.cc" />
+    <ClInclude Include="$(SolutionDir)tests\shared\renderer\client_app_renderer.h" />
+    <ClInclude Include="AES.h" />
+    <ClInclude Include="Alarms.h" />
+    <ClInclude Include="Base64.h" />
+    <ClInclude Include="browser\AudioManager.h" />
+    <ClInclude Include="browser\CBaseTrayIcon.h" />
+    <ClInclude Include="browser\IEBrowserHandler.h" />
+    <ClInclude Include="browser\LayeredWindow.h" />
+    <ClInclude Include="browser\RecordBoundWnd.h" />
+    <ClInclude Include="browser\TipWnd.h" />
+    <ClInclude Include="browser\ToastWnd.h" />
+    <ClInclude Include="browser\TopFullToolWnd.h" />
+    <ClInclude Include="FileAttribute.h" />
+    <ClInclude Include="HotKeyManager.h" />
+    <ClInclude Include="IniParse.h" />
+    <ClInclude Include="InitialWnd.h" />
+    <ClInclude Include="ipc\DoubleBufferQueue.h" />
+    <ClInclude Include="ipc\PipeClient.h" />
+    <ClInclude Include="ipc\PipeServer.h" />
+    <ClInclude Include="ipc\Random.h" />
+    <ClInclude Include="logic\WebOpt.h" />
+    <ClInclude Include="logic\WndOpt.h" />
+    <ClInclude Include="MD5.h" />
+    <ClInclude Include="MemoryDeal.h" />
+    <ClInclude Include="MiniDumper.h" />
+    <ClInclude Include="RegExp.h" />
+    <ClInclude Include="resources\win\resource.h" />
+    <ClInclude Include="RTCTX.h" />
+    <ClInclude Include="ScreenRecorder.h" />
+    <ClInclude Include="ShutDownPlan.h" />
+    <ClInclude Include="StringProcess.h" />
+    <ClInclude Include="string_util.h" />
+    <ClInclude Include="browser\TopFullWnd.h" />
+    <ClInclude Include="SysTask.h" />
+    <ClInclude Include="UtilLocalStorage.h" />
+    <ClInclude Include="WinHttpClient.h" />
+    <ClInclude Include="WinMsg.h" />
+    <ClInclude Include="wmic.h" />
+    <Image Include="logo.ico" />
+    <Image Include="resources\win\bk.gif" />
+    <Image Include="resources\win\cefclient.ico" />
+    <Image Include="resources\win\logo.ico" />
+    <Image Include="resources\win\small.ico" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\binding.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\dialogs.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\draggable.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\drm.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\localstorage.html" />
+    <Image Include="$(SolutionDir)tests\cefclient\resources\logo.png" />
+    <Image Include="$(SolutionDir)tests\cefclient\resources\menu_icon.1x.png" />
+    <Image Include="$(SolutionDir)tests\cefclient\resources\menu_icon.2x.png" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\other_tests.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\performance.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\performance2.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\preferences.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\response_filter.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\server.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\transparency.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\urlrequest.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\websocket.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\window.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\xmlhttprequest.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\extensions\set_page_color\README.md" />
+    <Image Include="$(SolutionDir)tests\cefclient\resources\extensions\set_page_color\icon.png" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\extensions\set_page_color\manifest.json" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\extensions\set_page_color\popup.html" />
+    <None Include="$(SolutionDir)tests\cefclient\resources\extensions\set_page_color\popup.js" />
+    <None Include="$(SolutionDir)tests\shared\resources\osr_test.html" />
+    <None Include="$(SolutionDir)tests\shared\resources\pdf.html" />
+    <None Include="$(SolutionDir)tests\shared\resources\pdf.pdf" />
+    <Image Include="$(SolutionDir)tests\shared\resources\window_icon.1x.png" />
+    <Image Include="$(SolutionDir)tests\shared\resources\window_icon.2x.png" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\cefclient_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\browser_window_osr_win.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\browser_window_osr_win.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\browser_window_std_win.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\browser_window_std_win.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\main_context_impl_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\main_message_loop_multithreaded_win.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\main_message_loop_multithreaded_win.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_accessibility_helper.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_accessibility_helper.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_accessibility_node.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_accessibility_node.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_accessibility_node_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_d3d11_win.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_d3d11_win.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_dragdrop_win.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_dragdrop_win.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_ime_handler_win.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_ime_handler_win.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_render_handler_win.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_render_handler_win.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_render_handler_win_d3d11.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_render_handler_win_d3d11.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_render_handler_win_gl.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_render_handler_win_gl.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\osr_window_win.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\osr_window_win.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\resource_util_win_idmap.cc" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\root_window_views.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\root_window_views.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\root_window_win.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\root_window_win.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\temp_window_win.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\temp_window_win.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\views_menu_bar.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\views_menu_bar.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\views_style.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\views_style.h" />
+    <ClCompile Include="$(SolutionDir)tests\cefclient\browser\views_window.cc" />
+    <ClInclude Include="$(SolutionDir)tests\cefclient\browser\views_window.h" />
+    <ResourceCompile Include="$(SolutionDir)tests\cefclient\resources\win\cefclient.rc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\main_message_loop_external_pump_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\resource_util_win.cc" />
+    <ClCompile Include="$(SolutionDir)tests\shared\browser\util_win.cc" />
+    <ClInclude Include="$(SolutionDir)tests\shared\browser\util_win.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(SolutionDir)libcef_dll_wrapper\libcef_dll_wrapper.vcxproj">
+      <Project>{F2560376-2B2A-317E-B1D7-5AD47FA3DB03}</Project>
+      <Name>libcef_dll_wrapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

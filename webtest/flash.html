@@ -1,0 +1,125 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script language="javascript">
+
+        function onCallNativeSucc(responseJsonstr){
+            alert( responseJsonstr);
+        }
+
+        function onCallNativeFail(code,msg){
+            alert(code + " - " + msg);
+        }
+
+
+        function callNative (reqInfo,cbSucc,cbFail,bOnce) {
+            reqJson = JSON.stringify(reqInfo);
+
+            return window.external.nativeCall({
+                request:reqJson,
+                persistent:!bOnce,
+                onSuccess:cbSucc,
+                onFailure:cbFail
+                });
+        }
+    
+        function registObserver()
+        {
+           var reqInfo = {
+                "funcName" : "browser_registObserver",
+				"hookopen":true
+            };
+            callNative(reqInfo,onCallNativeSucc,onCallNativeFail,false)
+        }
+       
+        function CheckIEVer() 
+        {
+            alert(navigator.userAgent);
+        }
+
+        function broadCastMsg(msgJson) {
+             var reqInfo = {
+                 "funcName" : "browser_broadcast",
+                 "msg" : msgJson,
+                 "target":1
+                 };
+            callNative(reqInfo,onCallNativeSucc,onCallNativeFail,false);
+        }
+
+        function testBroadCast() {
+            var msgJson = {
+                "msgName" : "test蜂窝蜂窝",
+                "msgParam" : {
+                    "arg1":"test1的方式蜂窝蜂窝",
+                    "arg2":2
+                }
+            };
+            broadCastMsg(msgJson)
+        }
+		
+		function testWinOpen() {
+          
+            window.open('https://www.baidu.com')
+        }
+		
+		function checkFlash() {
+			var hasFlash=0;　　　　//是否安装了flash
+			var flashVersion=0;　　//flash版本
+
+			if(document.all)
+			{
+				try
+				{
+					var swf = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+				}
+				catch(e)
+				{
+					swf = null;
+				}
+				//var swf = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+				if(swf) {
+					hasFlash=1;
+					VSwf=swf.GetVariable("$version");
+					flashVersion=parseInt(VSwf.split(" ")[1].split(",")[0]);
+				}
+			}
+			else
+			{
+				if (navigator.plugins && navigator.plugins.length > 0)
+				{
+					try
+					{
+						var swf=navigator.plugins["Shockwave Flash"];
+					}
+					catch(e)
+					{
+						swf = null;
+					}
+					//var swf=navigator.plugins["Shockwave Flash"];
+					if (swf)
+					{
+						hasFlash=1;
+						var words = swf.description.split(" ");
+						for (var i = 0; i < words.length; ++i)
+						{
+							if (isNaN(parseInt(words[i]))) continue;
+							flashVersion = parseInt(words[i]);
+						}
+					}
+				}
+			}
+			alert(hasFlash + '   ' + flashVersion);
+		}
+     
+    </script>
+</head>
+<body onload="registObserver()">
+    <div style="height:50px"></div> 
+
+    <button type="button" onclick="CheckIEVer()">检测IE版本</button>
+    <button type="button" onclick="testBroadCast()">发送广播</button>
+	<button type="button" onclick="testWinOpen()">打开URL</button>'
+	<button type="button" onclick="checkFlash()">测试Flash</button>
+</body>
+</html>

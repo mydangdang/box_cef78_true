@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1,minimal-ui">
+    <title>标题显示为窗口标题</title>
+    <meta name="description" content="DESKAPP DEMO">
+    <meta name="keywords" content="DESKAPP DEMO">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="stylesheet" href="resource/css/style.css">
+    <script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body onload="registObserver()">
+    <div class="topbar app-drag">
+        <h1 class="fl">DESKAPP DEMO</h1>
+        <div class="fr app-toolbox app-noDrag">
+            <a href="javascript:;" onclick="minimizeWindow();" class="btn btn-appMin"><span class="icon icon-a"></span></a>
+            <a href="javascript:;" onclick="maxmizeWindow();" class="btn btn-apppMaxNml"><span class="icon icon-a"></span></a>
+            <a href="javascript:;" onclick="closeWindow();" class="btn btn-appClose"><span class="icon icon-a"></span><span class="icon icon-b"></span></a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="fl side app-drag">
+                <div class="list list-menu app-noDrag">
+                    <label style="width:100%;background-color:#EEEEEE;text-align: center">窗口相关</label>
+                    <ul>
+                        <li><a href="javascript:;" onclick="getWindowPos();" title="获取窗口位置" class="btn ">获取窗口位置</a></li>
+                        <li><a href="javascript:;" onclick="setWindowPos();" title="设置窗口位置" class="btn ">设置窗口位置</a></li>
+                        <li><a href="javascript:;" onclick="openNewBrowser();" title="打开独立窗口" class="btn ">打开独立窗口</a></li>
+                        <li><a href="javascript:;" onclick="closeNewWindow();" title="关闭独立窗口" class="btn ">关闭独立窗口</a></li>
+
+                        <li><a href="javascript:;" onclick="ShowToast();" class="btn btn-13">Toast窗口</a></li>
+                        <li><a href="javascript:;" onclick="createToolBrowser('tag_toolchild');" title="打开工具窗口" class="btn ">打开工具窗口</a></li>
+
+                        <li><a href="javascript:;" onclick="getAllTabStates();" class="btn ">获取所有子标签信息</a></li>
+                        <li><a href="javascript:;" onclick="HideAllBrowser();" class="btn ">隐藏所有子标签</a></li>
+						<li><a href="javascript:;" onclick="testBroadCast();" class="btn ">测试给除自己外所有页面广播</a></li>
+						
+                        <li><a href="javascript:;" onclick="UpdateVersion('www.baidu.com');" class="btn ">更新版本</a></li>
+						<li><a href="javascript:;" onclick="setBaseInfo('2001','2002','1003');" class="btn">设置基础信息</a></li>
+                        <li><a href="javascript:;" onclick="getBaseInfo();" class="btn">获取基础信息</a></li>
+						<li><a href="javascript:;" onclick="testMemStorage('tag_child');" class="btn ">测试存储数据至内存</a></li>
+                        <li><a href="javascript:;" onclick="testLocalStorage('tag_child');" class="btn ">测试存储数据至磁盘</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="fl side app-drag">
+                <div class="list list-menu app-noDrag">
+                    <label style="width:100%;background-color:#EEEEEE;text-align: center">Chrome子窗口</label>
+                    <ul>
+                        <li><a href="javascript:;" onclick="createTabBrowser('tag_child','gourpName1');" title="创建子窗口" class="btn ">创建子窗口</a></li>
+                        <li><a href="javascript:;" onclick="selectTabBrowser('tag_child');" title="选择子窗口" class="btn ">选择子窗口</a></li>
+                        <li><a href="javascript:;" onclick="closeTabBrowser('tag_child');" title="关闭子窗口" class="btn ">关闭子窗口</a></li>
+
+                        <li><a href="javascript:;" onclick="isTabBrowserShow('tag_child');" title="子窗口是否显示" class="btn ">子窗口是否显示</a></li>
+                        <li><a href="javascript:;" onclick="showTabBrowser('tag_child',false);" title="隐藏子窗口" class="btn ">隐藏子窗口</a></li>
+                        <li><a href="javascript:;" onclick="showTabBrowser('tag_child',true);" title="显示子窗口" class="btn ">显示子窗口</a></li>
+
+                        <li><a href="javascript:;" onclick="isTabBrowserMute('tag_child');" title="子窗口是否静音" class="btn ">子窗口是否静音</a></li>
+                        <li><a href="javascript:;" onclick="muteTabBrowser('tag_child',true);" title="静音子窗口" class="btn ">静音子窗口</a></li>
+                        <li><a href="javascript:;" onclick="muteTabBrowser('tag_child',false);" title="恢复子窗口声音" class="btn ">恢复子窗口声音</a></li>
+                        <li><a href="javascript:;" onclick="clearBrowserCache('tag_child');" title="刷新子窗口缓存" class="btn ">刷新子窗口缓存</a></li>
+                        <li><a href="javascript:;" onclick="tabBrowserNavi('tag_child','http://www.baidu.com');" title="子窗口1导航至baidu" class="btn ">子窗口导航至baidu</a></li>
+                        <li><a href="javascript:;" onclick="reloadBrowser('tag_child',false);" class="btn ">子窗口Reload</a></li>
+                        <li><a href="javascript:;" onclick="showTopFull('tag_child');" title="全屏子窗口" class="btn">子窗口全屏</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="fl side app-drag">
+                <div class="list list-menu app-noDrag">
+                    <label style="width:100%;background-color:#EEEEEE;text-align: center">IE子窗口</label>
+                    <ul>
+                        <li><a href="javascript:;" onclick="createIETabBrowser('tag_child2','gourpName1');" title="创建IE子窗口" class="btn btn-46">创建子窗口</a></li>
+                        <li><a href="javascript:;" onclick="selectTabBrowser('tag_child2');" title="选择子窗口" class="btn ">选择子窗口</a></li>
+                        <li><a href="javascript:;" onclick="closeTabBrowser('tag_child2');" title="关闭子窗口" class="btn ">关闭子窗口</a></li>
+
+                        <li><a href="javascript:;" onclick="isTabBrowserShow('tag_child2');" title="子窗口是否显示" class="btn ">子窗口是否显示</a></li>
+                        <li><a href="javascript:;" onclick="showTabBrowser('tag_child2',false);" title="隐藏子窗口" class="btn ">隐藏子窗口</a></li>
+                        <li><a href="javascript:;" onclick="showTabBrowser('tag_child2',true);" title="显示子窗口" class="btn ">显示子窗口</a></li>
+
+                        <li><a href="javascript:;" onclick="isTabBrowserMute('tag_child2');" title="子窗口是否静音" class="btn ">子窗口是否静音</a></li>
+                        <li><a href="javascript:;" onclick="muteTabBrowser('tag_child2',true);" title="静音子窗口" class="btn ">静音子窗口</a></li>
+                        <li><a href="javascript:;" onclick="muteTabBrowser('tag_child2',false);" title="恢复子窗口声音" class="btn ">恢复子窗口声音</a></li>
+
+
+                        <li><a href="javascript:;" onclick="clearBrowserCache('tag_child2');" title="刷新子窗口缓存" class="btn ">刷新子窗口缓存</a></li>
+                        <li><a href="javascript:;" onclick="tabBrowserNavi('tag_child2','http://www.baidu.com');" title="子窗口1导航至baidu" class="btn ">子窗口导航至baidu</a></li>
+                        <li><a href="javascript:;" onclick="reloadBrowser('tag_child2',false);" class="btn ">子窗口Reload</a></li>
+                        <li><a href="javascript:;" onclick="showTopFull('tag_child2');" title="全屏子窗口" class="btn ">子窗口全屏</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="fl side app-drag">
+                <div class="list list-menu app-noDrag">
+                    <label style="width:100%;background-color:#EEEEEE;text-align: center">闹钟与定时关机</label>
+                    <ul>
+                        <li><a href="javascript:;" onclick="SetClock('add','clock1')" title="添加2分钟的闹钟" class="btn ">添加2分钟的闹钟1</a></li>
+                        <li><a href="javascript:;" onclick="SetClock('cancel','clock1')" title="取消2分钟的闹钟" class="btn ">取消2分钟的闹钟1</a></li>
+                        <li><a href="javascript:;" onclick="SetClock('add','clock2')" title="添加2分钟的闹钟" class="btn ">添加2分钟的闹钟2</a></li>
+                        <li><a href="javascript:;" onclick="SetClock('cancel','clock2')" title="取消2分钟的闹钟" class="btn ">取消2分钟的闹钟2</a></li>
+                        <li><a href="javascript:;" onclick="SetClock('query','')" title="查询闹钟信息" class="btn ">查询闹钟信息</a></li>
+                        <li><a href="javascript:;" onclick="QueryClock()" title="查询闹钟信息" class="btn ">查询闹钟信息</a></li>
+                        <li><a href="javascript:;" onclick="SetSysShutDown(true)" title="添加定时关机" class="btn ">添加定时关机</a></li>
+                        <li><a href="javascript:;" onclick="SetSysShutDown(false);" title="取消定时关机" class="btn ">取消定时关机</a></li>
+						<li><a href="javascript:;" onclick="TestAutoMemFree();" title="开启内存整理" class="btn ">开启内存整理</a></li>
+						<li><a href="javascript:;" onclick="GetMemUseSize();" title="获取当前占用内存" class="btn ">获取当前占用内存</a></li>
+						<li><a href="javascript:;" onclick="HardwareInfo();" title="获取硬件信息" class="btn ">获取硬件信息</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="fl side app-drag">
+                <div class="list list-menu app-noDrag">
+                    <label style="width:100%;background-color:#EEEEEE;text-align: center">快捷键相关</label>
+                    <ul>
+                        <li><a href="javascript:;" onclick="PrintHotKey();" class="btn ">查看当前快捷键</a></li>
+                        <li><a href="javascript:;" onclick="TestBossKey();" class="btn ">测试老板键</a></li>
+                        <li><a href="javascript:;" onclick="ExecuteProgram('Clicker.exe','参数1');" class="btn ">打开鼠标连点器</a></li>
+                        <li><a href="javascript:;" onclick="ExecuteProgram('Recorder.exe','参数2');" class="btn ">打开按键精灵</a></li>
+						<li><a href="javascript:;" onclick="gc;" class="btn ">V8垃圾回收</a></li>
+						<li><a href="javascript:;" onclick="Login()" class="btn ">登录</a></li>
+						<li><a href="javascript:;" onclick="SnapShot()" class="btn ">截屏</a></li>
+                        <li><a href="javascript:;" onclick="RecordScreen(10,'start')" class="btn ">开始录屏</a></li>
+                        <li><a href="javascript:;" onclick="RecordScreen(10,'stop')" class="btn ">停止录屏</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<iframe src="https://www.4399.com/flash/179480_4.htm" width="800" height="800">
+		</iframe>
+    </div>
+</body>
+<script src="resource/js/main.js"></script>
+</body>
+</html>

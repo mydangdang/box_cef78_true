@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Draggable Regions Test</title>
+  <script>
+    </script>
+<style>
+.draggable {
+  -webkit-app-region: drag;
+  position: absolute;
+  top: 125px;
+  left: 50px;
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+.nondraggable {
+  -webkit-app-region: no-drag;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+}
+
+</style>
+</head>
+<body>
+    <h1>红色区域可以拖动窗口</h1>
+  <a href="#" onClick="window.close(); return false;">关闭窗口</a>
+  <div class="draggable">
+    <div class="nondraggable"></div>
+  </div>
+  
+</body>
+</html>

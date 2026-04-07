@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body onload="registObserver()">
+<!-- iframe src="https://www.bilibili.com/video/BV16k4y1r7Yo?spm_id_from=333.851.b_7265706f7274466972737431.7" scrolling="no" id="iframepage" frameborder="0" width="100%" onload="changeFrameHeight()"></iframe-->
+<iframe src="https://www.baidu.com" scrolling="no" id="iframepage" frameborder="0" width="100%" onload="changeFrameHeight()"></iframe>
+</body>
+<script> 
+function changeFrameHeight(){
+    var ifm= document.getElementById("iframepage"); 
+    ifm.height=document.documentElement.clientHeight;
+
+}
+
+window.onresize=function(){  
+     changeFrameHeight();  
+
+} 
+</script>
+
+<script src="resource/js/main.js"></script>
+</body>
+</html>

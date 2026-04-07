@@ -1,0 +1,73 @@
+
+声明：
+// 调用JS
+    BOOL CallJsScript(int x, int y, int strMouseType);
+
+函数：
+BOOL CFormGame::CallJsScript( int x, int y, int strMouseType )
+{
+	BOOL retRst = FALSE;
+	try
+	{
+		// 游戏右键功能;
+		CComPtr<IDispatch> spScriptDisp = m_browser.GetScript();
+		if(!spScriptDisp)
+			return retRst;
+
+		CString csJavaScript;
+		csJavaScript.Format(_T("var Element = document.getElementById(\"gameSwf\");\
+							   if (Element) { Element.ClientCallJs(%d,%d,%d); }"), strMouseType, x, y);
+		wstring strJavaScript(csJavaScript);
+		CComVariant pvarRet;
+		CComBSTR bstrJavaScript(strJavaScript.c_str());
+		CComBSTR bstrScriptType(_T("javascript"));
+
+		CComQIPtr<IHTMLWindow2> spWindow2(spScriptDisp);
+		spWindow2->execScript(bstrJavaScript, bstrScriptType, &pvarRet);
+		retRst = TRUE;
+	}
+	catch (...)
+	{
+
+	}
+	return retRst;
+}
+
+
+
+
+
+调用地方：
+BOOL CFormGame::PreTranslateMessage( MSG* pMsg )
+{
+	if((pMsg->message >= WM_KEYFIRST) && (pMsg->message <= WM_KEYLAST))
+	{
+		{
+			return m_browser.PreTranslateMessage(pMsg);
+		}
+	}
+	else if((pMsg->message >= WM_MOUSEFIRST) && (pMsg->message <= WM_MOUSELAST))
+	{
+		if ((pMsg->message == WM_RBUTTONDOWN))
+		{
+			m_bRightMouseDown = true;
+			CallJsScript(HIWORD(pMsg->lParam), LOWORD(pMsg->lParam), 2);
+			return TRUE;
+		}
+		else if ((pMsg->message == WM_MOUSEMOVE) && m_bRightMouseDown)
+		{
+
+		}
+		else if (pMsg->message == WM_RBUTTONUP)
+		{
+			m_bRightMouseDown = false;
+			CallJsScript(HIWORD(pMsg->lParam), LOWORD(pMsg->lParam), 3);
+			return TRUE;
+		}
+		//return m_browser.PreTranslateMessage(pMsg);
+	}
+	return FALSE;
+}
+
+
+

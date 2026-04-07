@@ -1,0 +1,100 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<script type="text/javascript">
+
+  function test(str){
+    alert("C++主动调用JS, C++传入JS参数为"+str);
+    return "aaaaaa";
+  }
+  
+  function callback(str)
+  {
+      alert("JS异步回调JS函数, 由C++参入JS参数为:"+str);
+      return "lalala";
+  }
+  
+  function send(str,str1)
+  {
+    strres =  WebApp.SendCPPTask(str,str1)
+    alert("JS同步调用C++返回值为:"+strres);
+  }
+  
+  
+  function baidu()
+  {
+    window.open ("C:\\test.html", "newwindow5", "height=200, width=200,left=0,top=100");
+  }
+  
+  function baidu1()
+  {
+    window.open ("C:\\test.html", "newwindow6", "height=800, width=500,left=0,top=100");
+  }
+
+
+  
+  
+   window.JsHandleCallback = function(str){
+    alert("jscallback"+str);
+  };
+
+  window.CustomCallBack = function(str)
+  {
+    alert("CustomCallback"+str);
+  }
+  
+	function CallCppFunSub(strChannel,strParam)    
+	{  
+		var num = window.external.JsCallCpp(strChannel,strParam);   
+		alert(num);  
+		return num  
+	}
+	
+	function CppCallJs(strBusiness,strParam)    
+	{  
+		alert("IE:C++调用JS Channle:" + strBusiness+"   Json:"+strParam);  
+		return "hahah";  
+	}  
+
+  //alert("page load,call test:"+test1());
+</script>
+
+<!--style >
+.draggable {
+  -webkit-app-region: drag;
+}
+.no
+
+</style -->
+
+<!-- body bgcolor="#3c3f41" class="draggable" -->
+
+<body  class="draggable" >
+<!-- div style="-webkit-app-region: no-drag ; background:#3c3f41 ; opacity:0.6" -->
+<div style="background:#3c3f41 ; opacity:0.6" >
+<textarea  id="desc" rows="6" cols="20" maxlength="200" placeholder="example" spellcheck="false"></textarea>
+ <select id='LI11select'>
+      <option value='0'>Default</option>
+	   <option value='1'>Default</option>
+	    <option value='2'>Default</option>
+		 <option value='3'>Default</option>
+    </select>
+	<button type="button" onclick="CallCppFunSub(4,7)"> IE调用C++函数</button>  
+<input type="button" onclick="WebApp.PostCPPTask('fdas','{call}');">异步</input>
+<input type="button" onclick="send('fdas','11111');">同步</input>
+<input type="button" onclick="WebApp.PostWinTask('sys_commond','sc_close');">关闭</input>
+<input type="button" onclick="WebApp.PostWinTask('sys_commond','sc_min');">最小</input>
+<input type="button" onclick="WebApp.PostWinTask('sys_commond','sc_max');">最大</input>
+<input type="button" onclick="WebApp.PostWinTask('sys_commond','sc_restore');">还原</input>
+<input type="button" onclick="WebApp.PostWinTask('registecb','CustomCallBack');">注册</input><br />
+<a href='http://www.baidu.com/' title="baidu">百度</a><br />
+<a href="C:\test.html" target="_blank" >新窗口打开</a><br />
+<a href="javascript:;" onclick="baidu();"  >Open打开</a><br />
+<a href="javascript:;" onclick="baidu1();"  >Open百度1</a><br />
+<a href='http://www.le.com/'>乐视</a><br />
+<a href='E:\STApp_Workspace\cef\bin\Debug\web_content\index.html'>测试1</a><br />
+<a href='E:\OpenSrc-Proj\cef3\resources'>测试2</a><br />
+</div>
+<div style="background:#3c3f41 ; height:200;opacity:0.6">
+</div>
+</body>
+
+</html>

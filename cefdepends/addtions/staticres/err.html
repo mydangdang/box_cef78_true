@@ -1,0 +1,53 @@
+<html>
+<script>
+var search = window.location.search;
+
+function onCallNativeSucc (res) {
+    console.log(res)
+}
+
+function onCallNativeFail (code,msg) {
+    console.log(code +" " + msg)
+}
+
+
+function callNative (reqInfo,cbSucc,cbFail,bOnce) {
+    reqJson = JSON.stringify(reqInfo);
+	return window.nativeCall({
+    request:reqJson,
+    persistent:!bOnce,
+    onSuccess:cbSucc,
+    onFailure:cbFail
+	});
+}
+
+function getSearchString(key, Url) {
+    var str = Url;
+    str = str.substring(1, str.length); // 获取URL中?之后的字符（去掉第一位的问号）
+    // 以&分隔字符串，获得类似name=xiaoli这样的元素数组
+    var arr = str.split("&");
+    var obj = new Object();
+    // 将每一个数组元素以=分隔并赋给obj对象
+    for (var i = 0; i < arr.length; i++) {
+        var tmp_arr = arr[i].split("=");
+        obj[decodeURIComponent(tmp_arr[0])] = decodeURIComponent(tmp_arr[1]);
+    }
+    return obj[key];
+}
+
+function reload(){
+var errorURL = getSearchString('url',search);
+console.log(errorURL);
+  var reqInfo = {
+        "funcName" : "browser_navigate",
+        "tag" : "",
+        "url" : errorURL
+    };
+    callNative(reqInfo,onCallNativeSucc,onCallNativeFail,true)
+}
+</script>
+<body>
+<h3>页面加载错误</h3>
+<input type="button" value="刷新" onclick="reload();" />
+</body>
+</html>
