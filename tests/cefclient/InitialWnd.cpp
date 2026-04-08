@@ -78,7 +78,7 @@ void RequestCfg(HWND hNotify)
 
 	if (InitialWnd::m_szCfg.empty())
 	{
-		InitialWnd::m_szCfg = R"({"url":"http://html.landers.yoozhe.com/member/login","left" : -1,"top" : -1,"width" : 320,"height" : 480,"tag" : "loginWin"})";
+		InitialWnd::m_szCfg = R"({"url":"http://html.landers.yee5.com/pages/index","left":-1,"top":-1,"width":1400,"height":860,"tag":"indexWin"})";
 	}
 	
 	DWORD dwEnd = time(NULL);
